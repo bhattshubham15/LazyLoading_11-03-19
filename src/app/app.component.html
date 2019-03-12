@@ -1,13 +1,6 @@
-<!-- <div *ngFor="let item of colors; let i = index;"> -->
-  <!-- <span>{{ ar1[i].name }}</span> -->
-  <!-- <p>Hiiiii There!!!!!!!!!!!!!!!.......</p>
-</div> -->
-<div *ngIf = "cont" (scroll) = "LoaderFunction()">
-  <div *ngFor = "let cont of colors" class = "cont">Hii There    
-  </div>
+<div *ngFor="let item of input">
+  <p>
+    Hiiiiiiii There........................! 
+  </p>
 </div>
-<mspinner *ngIf = "loader" (scroll) = 'LoaderFunction()'>
-</mspinner>
-<div *ngIf = "loader" (scroll) = 'LoaderFunction()'>
-  <div *ngFor = "let cont of colors" class = "cont">Hello</div>
-</div>
+<div style="position: absolute;" class = "loader" *ngIf="flag"></div>
