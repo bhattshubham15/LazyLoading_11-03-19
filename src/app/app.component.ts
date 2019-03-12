@@ -1,5 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import {  MatSpinner } from 'angular/MatSpinner';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,30 +6,20 @@ import {  MatSpinner } from 'angular/MatSpinner';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Lazyloading';
-  colors  = new Array(50);
-  afterLoader = false;
-  firstContent  = true;
-  loader  = false;
-  @HostListener('window:scroll',  ['$event']) LoaderFunction(event: any) {
-    setTimeout(() => {
-if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-this.firstContent = false;
-this.loader = true;
-setTimeout(() => {
-this.loader = false;
-this.afterLoader = true;
-}, 1000);
-}
-}, 2000);
-    // ar1 = [
-    //   { name: 'Shubham', id: 1 },
-    //   { name: 'Varun', id: 2 },
-    //   { name: 'Qwerty', id: 3 },
-    //   { name: 'foo', id: 4 },
-    //   { name: 'John', id: 5 },
-    //   { name: 'Other', id: 6 } ];
+  title = 'secondProject';
+  public input = Array(50);
+  count:number  = 1;
+  flag:boolean  = false;
 
+  @HostListener('window:scroll', ['$event'])
+  onScroll(): void  {
+    if  ((window.innerHeight + window.scrollY)  >= document.body.offsetHeight)  {
+      this.flag = true;
+      setTimeout(() =>  {
+        this.flag = false;
+        this.input = [...this.input, this.count++];
+      }, 500);
+      console.log(this.count);
+    }
   }
-
 }
