@@ -22,4 +22,7 @@ export class AppComponent {
       console.log(this.count);
     }
   }
+  function lifeStyleApi(asdsd) {
+    
+  }
 }
